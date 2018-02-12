@@ -36,7 +36,7 @@ gulp.task('sass', function () {
 
 // Configure JS.
 gulp.task('js', function() {
-  return gulp.src('src/js/**/*.js')
+  return gulp.src(['src/js/vue.min.js','src/js/**/*.js'])
     .pipe(uglify())
     .pipe(concat('app.js'))
     .pipe(rename({suffix: '.min'}))
