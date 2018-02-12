@@ -1,32 +1,27 @@
 {
-  "name": "bulp-starter-package",
+  "name": "Nail Previewer",
   "version": "1.0.0",
-  "description": "A basic Gulp build system.",
+  "description": "A Nail style previewer",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chrisdemars/bulp-starter-package.git"
+    "url": "https://github.com/RoryDeken/nails-app.git"
   },
-  "author": "Chris DeMars <cdemars86@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chrisdemars/bulp-starter-package/issues"
-  },
-  "homepage": "https://github.com/chrisdemars/bulp",
+  "author": "Rory Deken <admin@dekendesign.com>",
   "devDependencies": {
-    "browser-sync": "^2.12.8",
+    "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-imagemin": "^3.0.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-pa11y": "0.0.4",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
-    "gulp-uglify": "^1.5.3",
+    "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.5"
   }
 }
