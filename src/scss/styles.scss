@@ -1,1 +1,8 @@
 // All Scss goes here.
+#previewer {
+  .output {
+    img{
+      max-width: 100%;
+    }
+  }
+}
