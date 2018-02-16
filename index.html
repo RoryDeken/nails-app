@@ -23,83 +23,90 @@
       <div class="row previewer">
         <div class="col-4 previewer-control">
           <label for="preview-control-collection">Choose Collection</label>
-          <select id="preview-control-collection" name="preview-control-collection">
-            <option default>Collection Name 3</option>
+          <select id="preview-control-collection" name="preview-control-collection" v-model="values.collection">
+            <option default value="0">Collection One</option>
           </select>
+
           <label for="preview-control-skin">Choose skin tone</label>
-          <input id="preview-control-skin" name="preview-control-skin" type="range" min="1" max="5" value="1">
+          <input id="preview-control-skin" name="preview-control-skin" type="range" min="0" max="4" value="0" v-model="values.skin">
+
           <fieldset class="preview-control-shapes">
             <label for="preview-control-shape">Choose nail shape</label>
             <label for="preview-control-shape-1">
-              <input id="preview-control-shape-1" name="preview-control-shape-1" type="radio" value="1">
+              <input id="preview-control-shape-1" name="preview-control-shape" type="radio" value="0" v-model="values.shape">
               <img src="http://placehold.it/50x50" />
             </label>
             <label for="preview-control-shape-2">
-              <input id="preview-control-shape-2" name="preview-control-shape-2" type="radio" value="2">
+              <input id="preview-control-shape-2" name="preview-control-shape" type="radio" value="1" v-model="values.shape">
               <img src="http://placehold.it/50x50" />
             </label>
             <label for="preview-control-shape-3">
-              <input id="preview-control-shape-3" name="preview-control-shape-3" type="radio" value="3">
+              <input id="preview-control-shape-3" name="preview-control-shape" type="radio" value="2" v-model="values.shape">
               <img src="http://placehold.it/50x50" />
             </label>
             <label for="preview-control-shape-4">
-              <input id="preview-control-shape-4" name="preview-control-shape-4" type="radio" value="4">
+              <input id="preview-control-shape-4" name="preview-control-shape" type="radio" value="3" v-model="values.shape">
               <img src="http://placehold.it/50x50" />
             </label>
             <label for="preview-control-shape-5">
-              <input id="preview-control-shape-5" name="preview-control-shape-5" type="radio" value="5">
+              <input id="preview-control-shape-5" name="preview-control-shape" type="radio" value="4" v-model="values.shape">
               <img src="http://placehold.it/50x50" />
             </label>
         </fieldset>
         <label for="preview-control-length">Choose nail length</label>
-        <input id="preview-control-length" name="preview-control-length" type="range" min="1" max="4" value="1">
+        <input id="preview-control-length" name="preview-control-length" type="range" min="0" max="4" value="0" v-model="values.nailLength">
         </div>
-        <div id="output" class="col-4 output" ><img :src="url" /></div>
+        <div id="output" class="col-4 output" >
+          <img :src=url />
+          <img :src=skin />
+
+        </div>
         <div class="col-4 colors">
           <fieldset class="preview-colors">
           <label for="preview-color">Choose colour</label>
           <img src="http://placehold.it/80x80" class="preview-color-active"/>
           <label for="preview-color-1">
-            <input id="preview-color-1" name="preview-color-1" type="radio" value="1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="0" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-2">
-            <input id="preview-color-2" name="preview-color-2" type="radio" value="1">
+            <input id="preview-color-2" name="preview-color" type="radio" value="1" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-3">
-            <input id="preview-color-3" name="preview-color-3" type="radio" value="1">
+            <input id="preview-color-3" name="preview-color" type="radio" value="2" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-4">
-            <input id="preview-color-4" name="preview-color-4" type="radio" value="1">
+            <input id="preview-color-4" name="preview-color" type="radio" value="3" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-5">
-            <input id="preview-color-5" name="preview-color-5" type="radio" value="1">
+            <input id="preview-color-5" name="preview-color" type="radio" value="4" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-6">
-            <input id="preview-color-6" name="preview-color-6" type="radio" value="1">
+            <input id="preview-color-6" name="preview-color" type="radio" value="5" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-7">
-            <input id="preview-color-7" name="preview-color-7" type="radio" value="1">
+            <input id="preview-color-7" name="preview-color" type="radio" value="6" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-8">
-            <input id="preview-color-8" name="preview-color-8" type="radio" value="1">
+            <input id="preview-color-8" name="preview-color" type="radio" value="7" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-9">
-            <input id="preview-color-9" name="preview-color-9" type="radio" value="1">
+            <input id="preview-color-9" name="preview-color" type="radio" value="8" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           <label for="preview-color-10">
-            <input id="preview-color-10" name="preview-color-10" type="radio" value="1">
+            <input id="preview-color-10" name="preview-color" type="radio" value="9" v-model="values.color">
             <img src="http://placehold.it/50x50" />
           </label>
           </fieldset>
+
         </div>
       </div>
     </div>
