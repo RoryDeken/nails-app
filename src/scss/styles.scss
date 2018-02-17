@@ -1,8 +1,53 @@
 // All Scss goes here.
 #previewer {
+  .previewer-title {
+    text-align: center;
+  }
+  select {
+    display: block;
+  }
+  .preview-control-shapes{
+    label[for="preview-control-shape"] {
+    display: block;
+  }
+    img {
+      cursor: pointer;
+    }
+  }
+  input[type='range'] {
+    display: block;
+  }
+  input[type='radio'] {
+    display: none;
+  }
+
   .output {
     img{
       max-width: 100%;
+    }
+  }
+  .colors {
+    .preview-colors {
+      #preview-color {
+        text-align: center;
+      }
+      input {
+      display: none;
+    }
+      input + div {
+        cursor: pointer;
+        margin: auto 5px;
+        display: inline-block;
+
+      }
+
+      input:checked + div {
+        border:2px solid black;
+      }
+
+
+
+
     }
   }
 }
