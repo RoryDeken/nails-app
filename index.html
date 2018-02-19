@@ -30,34 +30,34 @@
           </select>
 
           <label for="preview-control-skin">Choose skin tone</label>
-          <input id="preview-control-skin" name="preview-control-skin" type="range" min="0" max="4" step="1" v-model="values.skin">
+          <input id="preview-control-skin" name="preview-control-skin" type="range" min="0" max="3" step="1" v-model="values.skin">
 
           <fieldset class="preview-control-shapes">
             <label for="preview-control-shape">Choose nail shape</label>
             <label for="preview-control-shape-1">
               <input id="preview-control-shape-1" name="preview-control-shape" type="radio" value="0" v-model="values.shape">
-              <img src="http://placehold.it/50x50" />
+              <img src="http://chinaglaze.com/images/tryon/shape_1.jpg" />
             </label>
             <label for="preview-control-shape-2">
               <input id="preview-control-shape-2" name="preview-control-shape" type="radio" value="516" v-model="values.shape">
-              <img src="http://placehold.it/50x50" />
+              <img src="http://chinaglaze.com/images/tryon/shape_4.jpg" />
             </label>
             <label for="preview-control-shape-3">
               <input id="preview-control-shape-3" name="preview-control-shape" type="radio" value="1032" v-model="values.shape">
-              <img src="http://placehold.it/50x50" />
+              <img src="http://chinaglaze.com/images/tryon/shape_3.jpg" />
             </label>
             <label for="preview-control-shape-4">
               <input id="preview-control-shape-4" name="preview-control-shape" type="radio" value="1548" v-model="values.shape">
-              <img src="http://placehold.it/50x50" />
+              <img src="http://chinaglaze.com/images/tryon/shape_2.jpg" />
             </label>
 
         </fieldset>
         <label for="preview-control-length">Choose nail length</label>
-        <input id="preview-control-length" name="preview-control-length" type="range" min="0" max="2000" value="0" step="300" v-model="values.nailLength">
+        <input id="preview-control-length" name="preview-control-length" type="range" min="-900" max="0" value="-900" step="300" v-model="values.nailLength">
         </div>
         <div id="output" class="col-4 output" >
           <div id="color" style="position:absolute;width:300px;height:516px;z-index:0;" v-bind:style="{backgroundColor:values.color}"></div>
-          <div id="hand" style="background-image:url('../dist/img/hand.png');width:300px;height:516px;position:absolute;z-index:1;margin:auto;" v-bind:style="{backgroundPosition: values.nailLength + 'px ' + values.shape + 'px'}">
+          <div id="hand" v-bind:style="{backgroundImage: 'url(../dist/img/hand' + values.skin + '.png)',backgroundPosition: values.nailLength + 'px ' + values.shape + 'px'}" style="width:300px;height:516px;position:absolute;z-index:1;margin:auto;" >
 
         </div>
 

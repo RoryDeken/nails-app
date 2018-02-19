@@ -14,7 +14,7 @@ var previewer = new Vue({
 
         values: {
           collection: 0,
-          nailLength: 0,
+          nailLength: -900,
           hand:0,
           skin:0,
           shape: 0,
