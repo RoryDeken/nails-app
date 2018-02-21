@@ -24,10 +24,7 @@
         <div class="col-8">
       <div class="row previewer">
         <div class="col-4 previewer-control">
-          <label for="preview-control-collection">Choose Collection</label>
-          <select id="preview-control-collection" name="preview-control-collection" v-model="values.collection">
-            <option default value="0">Collection One</option>
-          </select>
+          <h2>Collection One</h2>
 
           <label for="preview-control-skin">Choose skin tone</label>
           <input id="preview-control-skin" name="preview-control-skin" type="range" min="0" max="3" step="1" v-model="values.skin">
@@ -57,7 +54,7 @@
         </div>
         <div id="output" class="col-4 output" >
           <div id="color" style="position:absolute;width:300px;height:516px;z-index:0;" v-bind:style="{backgroundColor:values.color}"></div>
-          <div id="hand" v-bind:style="{backgroundImage: 'url(../dist/img/hand' + values.skin + '.png)',backgroundPosition: values.nailLength + 'px ' + values.shape + 'px'}" style="width:300px;height:516px;position:absolute;z-index:1;margin:auto;" >
+          <div id="hand" v-bind:style="{backgroundImage: 'url(./dist/img/hand' + values.skin + '.png)',backgroundPosition: values.nailLength + 'px ' + values.shape + 'px'}" style="width:300px;height:516px;position:absolute;z-index:1;margin:auto;" >
 
         </div>
 
