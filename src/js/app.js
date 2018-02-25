@@ -14,9 +14,9 @@ var previewer = new Vue({
 
         values: {
           collection: 0,
-          nailLength: -900,
+          nailLength: -15,
           hand:0,
-          skin:0,
+          skin:1,
           shape: 0,
           color: '#ebcec0'},
   },

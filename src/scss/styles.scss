@@ -81,7 +81,7 @@ background: linear-gradient(to right, #f1e1cc , #482615);
 }
 
 #preview-control-length::-webkit-slider-runnable-track, #preview-control-length:focus::-webkit-slider-runnable-track {
-background: linear-gradient(to right, #ffe2e2 25%, white 26%, #ffe2e2 27%,#ffe2e2 49%, white 50%, #ffe2e2 51%, #ffe2e2 75%, white 76%, #ffe2e2 77% )
+background: linear-gradient(to right, #ffe2e2 33%, white 34%, #ffe2e2 35%,#ffe2e2 65%, white 66%, #ffe2e2 67%)
 }
 input[type=range]::-moz-range-track {
   width: 100%;
@@ -143,11 +143,22 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
 /* hand styles */
+#output {
+  position: relative;
+
   .output {
     img{
       max-width: 100%;
     }
+    #hand {
+      display: none;
+      &.visible {
+        display: block;
+      }
+
+    }
   }
+}
 
   /* colors section */
 

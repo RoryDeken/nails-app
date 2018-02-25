@@ -21,14 +21,16 @@
     <div id="previewer" class="container-fluid">
         <h1 class="previewer-title">Create your own candy coat style!</h1>
         <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-12 col-md-8">
       <div class="row previewer">
-        <div class="col-4 previewer-control">
-          <h2>Collection One</h2>
+        <div class="col-lg-4 col-sm-12 previewer-control">
 
+      <div class="row">
+<div class="col-6 col-md-12">
           <label for="preview-control-skin">Choose skin tone</label>
-          <input id="preview-control-skin" name="preview-control-skin" type="range" min="0" max="3" step="1" v-model="values.skin">
-
+          <input id="preview-control-skin" name="preview-control-skin" type="range" min="1" max="6" step="1" v-model="values.skin">
+</div>
+<div class="col-6 col-md-12">
           <fieldset class="preview-control-shapes">
             <label for="preview-control-shape">Choose nail shape</label>
             <label for="preview-control-shape-1">
@@ -36,26 +38,38 @@
               <img src="http://chinaglaze.com/images/tryon/shape_1.jpg" />
             </label>
             <label for="preview-control-shape-2">
-              <input id="preview-control-shape-2" name="preview-control-shape" type="radio" value="516" v-model="values.shape">
+              <input id="preview-control-shape-2" name="preview-control-shape" type="radio" value="425" v-model="values.shape">
               <img src="http://chinaglaze.com/images/tryon/shape_4.jpg" />
             </label>
             <label for="preview-control-shape-3">
-              <input id="preview-control-shape-3" name="preview-control-shape" type="radio" value="1032" v-model="values.shape">
+              <input id="preview-control-shape-3" name="preview-control-shape" type="radio" value="850" v-model="values.shape">
               <img src="http://chinaglaze.com/images/tryon/shape_3.jpg" />
             </label>
             <label for="preview-control-shape-4">
-              <input id="preview-control-shape-4" name="preview-control-shape" type="radio" value="1548" v-model="values.shape">
+              <input id="preview-control-shape-4" name="preview-control-shape" type="radio" value="1275" v-model="values.shape">
+              <img src="http://chinaglaze.com/images/tryon/shape_2.jpg" />
+            </label>
+            <label for="preview-control-shape-5">
+              <input id="preview-control-shape-5" name="preview-control-shape" type="radio" value="1700" v-model="values.shape">
+              <img src="http://chinaglaze.com/images/tryon/shape_2.jpg" />
+            </label>
+            <label for="preview-control-shape-6">
+              <input id="preview-control-shape-6" name="preview-control-shape" type="radio" value="2125" v-model="values.shape">
               <img src="http://chinaglaze.com/images/tryon/shape_2.jpg" />
             </label>
 
         </fieldset>
+      </div>
+      <div class="col-6 col-md-12">
         <label for="preview-control-length">Choose nail length</label>
-        <input id="preview-control-length" name="preview-control-length" type="range" min="-900" max="0" value="-900" step="300" v-model="values.nailLength">
+        <input id="preview-control-length" name="preview-control-length" type="range"  max="-15" min="-681" step="333" v-model="values.nailLength">
+      </div>
+    </div>
         </div>
         <div id="output" class="col-4 output" >
-          <div id="color" style="position:absolute;width:300px;height:516px;z-index:0;" v-bind:style="{backgroundColor:values.color}"></div>
-          <div id="hand" v-bind:style="{backgroundImage: 'url(./dist/img/hand' + values.skin + '.png)',backgroundPosition: values.nailLength + 'px ' + values.shape + 'px'}" style="width:300px;height:516px;position:absolute;z-index:1;margin:auto;" >
-
+          <div id="color" style="position:absolute;width: 315px;height: 400px;z-index:0;" v-bind:style="{backgroundColor:values.color}"></div>
+          <div id="hand" v-bind:style="{backgroundPosition: values.nailLength + 'px ' + values.shape + 'px',backgroundImage: 'url(./dist/img/' + values.skin + '.png)'}" style=" width: 315px;
+    height: 460px;position:absolute;z-index:1;margin:auto;background-size:1000px;display:block;" >
         </div>
 
 
