@@ -144,28 +144,63 @@ input[type=range]:focus::-ms-fill-upper {
 
 /* hand styles */
 #output {
-  position: relative;
 
   .output {
     img{
       max-width: 100%;
     }
-    #hand {
-      display: none;
-      &.visible {
-        display: block;
-      }
-
-    }
   }
+  #hand{
+    width: 300px;
+    height: 460px;
+    margin:auto;
+    display:block;
+  position:relative;
+  z-index:1;
+  background-size:1000px!important;
+  @media(max-width: 768px){
+    width: 150px;
+    height: 230px;
+    background-size: 500px!important;
+
+  }
+  }
+
 }
 
   /* colors section */
 
   .colors {
     .preview-colors {
+      /* colors*/
+      #preview-color-0 + div{
+        background: #ebcec0;
+      }
+      #preview-color-1 + div{
+        background: #eee;
+      }
+      #preview-color-2 + div{
+        background: #aaa;
+      }
+      #preview-color-3 + div{
+        background: #f00;
+      }
+      #preview-color-4 + div{
+        background: #30f;
+      }
+      /* End colors */
+
       #preview-color {
         text-align: center;
+        margin: auto;
+        width:75px;height:50px;border-radius:100%;display:block;
+      }
+      .preview-color {
+        width:50px;
+        height:50px;
+        border-radius:100%;
+        display:block;
+
       }
       input {
       display: none;
@@ -180,6 +215,12 @@ input[type=range]:focus::-ms-fill-upper {
       input:checked + div {
         border:2px solid black;
       }
+      label {
+        &.color-select {
+          display: block;
+        }
+      }
+
     }
   }
 }

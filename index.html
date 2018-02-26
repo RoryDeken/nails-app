@@ -21,11 +21,11 @@
     <div id="previewer" class="container-fluid">
         <h1 class="previewer-title">Create your own candy coat style!</h1>
         <div class="row justify-content-center">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-10">
       <div class="row previewer">
-        <div class="col-lg-4 col-sm-12 previewer-control">
-
-      <div class="row">
+        <div class="col-12 col-md-4 previewer-control">
+          <h2>Collection One</h2>
+          <div class="row">
 <div class="col-6 col-md-12">
           <label for="preview-control-skin">Choose skin tone</label>
           <input id="preview-control-skin" name="preview-control-skin" type="range" min="1" max="6" step="1" v-model="values.skin">
@@ -64,39 +64,34 @@
         <label for="preview-control-length">Choose nail length</label>
         <input id="preview-control-length" name="preview-control-length" type="range"  max="-15" min="-681" step="333" v-model="values.nailLength">
       </div>
-    </div>
+      </div>
         </div>
-        <div id="output" class="col-4 output" >
-          <div id="color" style="position:absolute;width: 315px;height: 400px;z-index:0;" v-bind:style="{backgroundColor:values.color}"></div>
-          <div id="hand" v-bind:style="{backgroundPosition: values.nailLength + 'px ' + values.shape + 'px',backgroundImage: 'url(./dist/img/' + values.skin + '.png)'}" style=" width: 315px;
-    height: 460px;position:absolute;z-index:1;margin:auto;background-size:1000px;display:block;" >
+        <div id="output" class="col-12 col-md-4 output" >
+          <div id="hand" v-bind:style="{background: values.nailLength + 'px ' + values.shape + 'px url(./dist/img/' + values.skin + '.png) ' + values.color}"></div>
         </div>
-
-
-        </div>
-        <div class="col-4 colors">
+        <div class="col-12 col-md-4 colors">
           <fieldset class="preview-colors">
-          <label for="preview-color">Choose colour</label>
-          <div id="preview-color" style="width:100px;height:100px;border-radius:100%;display:block;" v-bind:style="{backgroundColor:values.color}"></div>
+          <label for="preview-color" class="color-select">Choose colour</label>
+          <div id="preview-color"  class="d-none d-lg-block" v-bind:style="{backgroundColor:values.color}"></div>
           <label for="preview-color-0">
             <input id="preview-color-0" name="preview-color" type="radio" value="#ebcec0" v-model="values.color" checked>
-            <div id="preview-color" style="width:50px;height:50px;border-radius:100%;display:block;background-color:#ebcec0"></div>
+            <div class="preview-color" ></div>
           </label>
           <label for="preview-color-1">
             <input id="preview-color-1" name="preview-color" type="radio" value="#eee" v-model="values.color">
-            <div id="preview-color" style="width:50px;height:50px;border-radius:100%;display:block;background-color:#eee"></div>
+            <div class="preview-color" ></div>
           </label>
           <label for="preview-color-2">
             <input id="preview-color-2" name="preview-color" type="radio" value="#aaa" v-model="values.color">
-            <div id="preview-color" style="width:50px;height:50px;border-radius:100%;display:block;background-color:#aaa"></div>
+            <div class="preview-color" ></div>
           </label>
           <label for="preview-color-3">
             <input id="preview-color-3" name="preview-color" type="radio" value="#f00" v-model="values.color">
-            <div id="preview-color" style="width:50px;height:50px;border-radius:100%;display:block;background-color:#f00"></div>
+            <div class="preview-color"></div>
           </label>
           <label for="preview-color-4">
             <input id="preview-color-4" name="preview-color" type="radio" value="#30f" v-model="values.color">
-            <div id="preview-color" style="width:50px;height:50px;border-radius:100%;display:block;background-color:#30f"></div>
+            <div class="preview-color" ></div>
           </label>
 
 
@@ -104,10 +99,16 @@
           </fieldset>
 
         </div>
+
+
+
+
+
+          </div>
       </div>
     </div>
   </div>
-</div>
+
 
 
   <!-- bootstrap js if necessary ->
