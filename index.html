@@ -38,32 +38,32 @@
               <div class="col-4">
             <label for="preview-control-shape-1">
               <input id="preview-control-shape-1" name="preview-control-shape" type="radio" value="0" v-model="shape">
-              <img src="http://chinaglaze.com/images/tryon/shape_1.jpg" />
+              <img src="./dist/img/shapes/stiletto.png" />
             </label>
           </div><div class="col-4">
             <label for="preview-control-shape-2">
               <input id="preview-control-shape-2" name="preview-control-shape" type="radio" value="425" v-model="shape">
-              <img src="http://chinaglaze.com/images/tryon/shape_4.jpg" />
+              <img src="./dist/img/shapes/almond.png" />
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-3">
               <input id="preview-control-shape-3" name="preview-control-shape" type="radio" value="850" v-model="shape">
-              <img src="http://chinaglaze.com/images/tryon/shape_3.jpg" />
+              <img src="./dist/img/shapes/ballerina.png" />
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-4">
               <input id="preview-control-shape-4" name="preview-control-shape" type="radio" value="1275" v-model="shape">
-              <img src="http://chinaglaze.com/images/tryon/shape_2.jpg" />
+              <img src="./dist/img/shapes/oval.png" />
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-5">
               <input id="preview-control-shape-5" name="preview-control-shape" type="radio" value="1700" v-model="shape">
-              <img src="http://chinaglaze.com/images/tryon/shape_2.jpg" />
+              <img src="./dist/img/shapes/round.png" />
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-6">
               <input id="preview-control-shape-6" name="preview-control-shape" type="radio" value="2125" v-model="shape">
-              <img src="http://chinaglaze.com/images/tryon/shape_2.jpg" />
+              <img src="./dist/img/shapes/square.png" />
             </label>
             </div>
           </div>
@@ -77,12 +77,12 @@
         </div>
         <div id="output" class="col-12 col-md-4 output">
 
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/1.png) ' + color}" v-show="skin === 1"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/2.png) ' + color}" v-show="skin === 2"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/3.png) ' + color}" v-show="skin === 3"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/4.png) ' + color}" v-show="skin === 4"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/5.png) ' + color}" v-show="skin === 5"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/6.png) ' + color}" v-show="skin === 6"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/1.png), ' + color}" v-show="skin === 1"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/2.png), ' + color}" v-show="skin === 2"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/3.png), ' + color}" v-show="skin === 3"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/4.png), ' + color}" v-show="skin === 4"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/5.png), ' + color}" v-show="skin === 5"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/6.png), ' + color}" v-show="skin === 6"></div>
 
 
 
@@ -90,27 +90,16 @@
         <div class="col-12 col-md-4 colors">
           <fieldset class="preview-colors">
           <label for="preview-color" class="color-select">Choose colour</label>
-          <div id="preview-color"  class="d-none d-lg-block" v-bind:style="{backgroundColor:color}"></div>
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
           <label for="preview-color-0">
-            <input id="preview-color-0" name="preview-color" type="radio" value="#ebcec0" v-model="color" checked>
-            <div class="preview-color" ></div>
+            <input id="preview-color-0" name="preview-color" type="radio" value="#ffc3e5" v-model="color" checked>
+            <div class="preview-color" style="background-image:url('./dist/img/colors/001.png'); background-repeat:no-repeat;"></div>
           </label>
           <label for="preview-color-1">
-            <input id="preview-color-1" name="preview-color" type="radio" value="#eee" v-model="color">
-            <div class="preview-color" ></div>
+            <input id="preview-color-1" name="preview-color" type="radio" value="#c78eb8" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/002.png'); background-repeat:no-repeat;"></div>
           </label>
-          <label for="preview-color-2">
-            <input id="preview-color-2" name="preview-color" type="radio" value="#aaa" v-model="color">
-            <div class="preview-color" ></div>
-          </label>
-          <label for="preview-color-3">
-            <input id="preview-color-3" name="preview-color" type="radio" value="#f00" v-model="color">
-            <div class="preview-color"></div>
-          </label>
-          <label for="preview-color-4">
-            <input id="preview-color-4" name="preview-color" type="radio" value="#30f" v-model="color">
-            <div class="preview-color" ></div>
-          </label>
+
 
 
 

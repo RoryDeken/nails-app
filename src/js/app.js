@@ -8,7 +8,9 @@ var previewer = new Vue({
           hand:0,
           skin:1,
           shape: 0,
-          color: '#ebcec0'},
+          color: '#ffc3e5',
+
+        },
 
     computed: {
         skin: function(){
