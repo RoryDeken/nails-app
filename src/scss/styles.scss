@@ -23,9 +23,6 @@
   }
   /*titles */
 
-  .previewer-title {
-    text-align: center;
-  }
 
   /* styling controls */
 
@@ -177,12 +174,6 @@ input[type=range]:focus::-ms-fill-upper {
   position:relative;
   z-index:1;
   background-size:1000px!important;
-  @media(max-width: 768px){
-    width: 150px;
-    height: 230px;
-    background-size: 500px!important;
-
-  }
   }
 
 }

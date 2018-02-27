@@ -20,6 +20,6 @@ var previewer = new Vue({
   mounted: function(){
     setTimeout(function(){
       previewer.loading = false;
-    }, 1000);
+    }, 2500);
   }
 });
