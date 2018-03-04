@@ -1,6 +1,8 @@
 #loader {
   height:100vh;
-  width: 100%;
+  width: 100vw;
+  left: 0;
+  top: 0;
   position: fixed;
   background: white;
   z-index: 2;
@@ -16,11 +18,15 @@
 }
 
 #previewer {
+  margin-top: 50px;
   /* general styles */
   font-family: "Montserrat","Helvetica Neue",Arial,sans-serif;
   img {
     max-width: 100%;
   }
+/*  img[src="./dist/img/fake.png"]{
+    display: none;
+  }*/
   /*titles */
 
 
@@ -176,34 +182,72 @@ input[type=range]:focus::-ms-fill-upper {
       max-width: 100%;
     }
   }
+  #output-inner {
+    width: 300px;
+    height: 455px;
+    margin:auto;
+    display:block;
+    position: relative;
   #hand{
     height: 0px;
     width: 0px;
-    margin:auto;
-    display:block;
   position:absolute;
   z-index:-10;
   background: none;
   }
-  #hand.top {
+  #hand.top , #bg {
     z-index: 1;
-    position: relative;
+    position: absolute;
     background-size:1000px!important;
-    width: 300px;
-    height: 460px;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
   }
+  #bg {
+    z-index: 0;
+    background-repeat: repeat!important;
+    background-size: 10px!important;
+  }
+}
 
 }
 
   /* colors section */
 
   .colors {
+    fieldset {
+      padding: 10px 15px;
+    }
+    #color-selector {
+      width: 100%;
+    background:none;
+    border: none;
+    border-radius: 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    }
+    .color-link {
+      background: white;
+      padding:10px 20px;
+      border:2px solid black;
+      border-radius: 0;
+      color: black;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    .color-link:hover, .color-link:focus {
+      background:rgba(254,179,207,0.3);
+      text-decoration: none;
+    }
     .preview-colors {
 
       #preview-color {
 
         width:105px;height:105px;border-radius:50%;display:block;
         margin-bottom: 25px;
+        margin-top: 25px;
         border: 1px solid #d0d0d0;
         position: relative;
         overflow: hidden;
@@ -259,6 +303,7 @@ input[type=range]:focus::-ms-fill-upper {
       label {
         &.color-select {
           display: block;
+          margin-top: 25px;
         }
       }
 

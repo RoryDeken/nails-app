@@ -15,6 +15,23 @@
   <!-- No Icon Yet: <link rel="shortcut icon" href="favicon.ico" type=""> -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css"> -->
     <!-- Custom CSS -->
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+<script type="text/javascript">
+  WebFont.load({
+    google: {
+      families:
+        ["Questrial:400:latin","Montserrat:400:latin"]
+    },
+    timeout: 5000
+  });
+</script>
+<style>
+*
+{
+font-family: "Century Gothic",CenturyGothic,"AppleGothic",sans-serif;
+font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
+}
+</style>
     <link href="dist/css/styles.min.css" rel="stylesheet">
   </head>
   <body>
@@ -22,102 +39,358 @@
       <div id="loader" v-show="loading"><img src="./dist/img/loading.gif"></div>
 
         <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
+        <div class="col-12 col-lg-10">
       <div class="row previewer">
-        <div class="col-12 col-md-4 previewer-control">
+        <div class="col-12 col-lg-4 previewer-control">
 
           <div class="row">
-<div class="col-6 col-md-12">
+<div class="col-6 col-lg-12">
           <label for="preview-control-skin">Choose skin tone</label>
           <input id="preview-control-skin" name="preview-control-skin" type="range" min="1" max="6" step="1" v-model.number="skin">
-          <label for="preview-control-length" class="d-md-none">Choose nail length</label>
-          <input class="d-md-none" id="preview-control-length" name="preview-control-length" type="range"  max="-15" min="-681" step="333" v-model="nailLength">
+          <label for="preview-control-length" class="d-lg-none">Choose nail length</label>
+          <input class="d-lg-none" id="preview-control-length" name="preview-control-length" type="range"  max="-15" min="-681" step="333" v-model="nailLength">
 
 </div>
-<div class="col-6 col-md-12">
+<div class="col-6 col-lg-12">
           <fieldset class="preview-control-shapes">
             <label for="preview-control-shape">Choose nail shape</label>
             <div class="row">
               <div class="col-4">
             <label for="preview-control-shape-1">
               <input id="preview-control-shape-1" name="preview-control-shape" type="radio" value="0" v-model="shape">
-              <img src="./dist/img/shapes/stiletto.png" />
+              <img v-bind:src="fakeControl(0)" data-src="./dist/img/shapes/stiletto.png" class="lazy-load"/>
             </label>
           </div><div class="col-4">
             <label for="preview-control-shape-2">
               <input id="preview-control-shape-2" name="preview-control-shape" type="radio" value="425" v-model="shape">
-              <img src="./dist/img/shapes/almond.png" />
+              <img v-bind:src="fakeControl(1)" data-src="./dist/img/shapes/almond.png" class="lazy-load" />
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-3">
               <input id="preview-control-shape-3" name="preview-control-shape" type="radio" value="850" v-model="shape">
-              <img src="./dist/img/shapes/ballerina.png" />
+              <img v-bind:src="fakeControl(2)" data-src="./dist/img/shapes/ballerina.png" class="lazy-load" />
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-4">
               <input id="preview-control-shape-4" name="preview-control-shape" type="radio" value="1275" v-model="shape">
-              <img src="./dist/img/shapes/oval.png" />
+              <img  v-bind:src="fakeControl(3)" class="lazy-load" data-src="./dist/img/shapes/oval.png" />
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-5">
               <input id="preview-control-shape-5" name="preview-control-shape" type="radio" value="1700" v-model="shape">
-              <img src="./dist/img/shapes/round.png" />
+              <img v-bind:src="fakeControl(4)" data-src="./dist/img/shapes/round.png" class="lazy-load"/>
             </label>
             </div><div class="col-4">
             <label for="preview-control-shape-6">
               <input id="preview-control-shape-6" name="preview-control-shape" type="radio" value="2125" v-model="shape">
-              <img src="./dist/img/shapes/square.png" />
+              <img v-bind:src="fakeControl(5)" data-src="./dist/img/shapes/square.png" class="lazy-load"/>
             </label>
             </div>
           </div>
         </fieldset>
       </div>
-      <div class="col-6 col-md-12 d-none d-sm-none d-md-block" >
+      <div class="col-6 col-lg-12 d-none d-lg-block" >
         <label for="preview-control-length">Choose nail length</label>
         <input id="preview-control-length" name="preview-control-length" type="range"  max="-15" min="-681" step="333" v-model="nailLength">
       </div>
       </div>
         </div>
-        <div id="output" class="col-12 col-md-4 output">
-
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/1.png), rgba(' + color + ',0.85)'}" v-bind:class="[skin === 1 ? 'top' : '' ]"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(' + fakeUrl(0) + '), rgba(' + color + ',0.85)'}" v-bind:class="[skin === 2 ? 'top' : '' ]"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(' + fakeUrl(1) + '), rgba(' + color + ',0.85)'}" v-bind:class="[skin === 3 ? 'top' : '' ]"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(' + fakeUrl(2) + '), rgba(' + color + ',0.85)'}" v-bind:class="[skin === 4 ? 'top' : '' ]"></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(' + fakeUrl(3) + '), rgba(' + color + ',0.85)'}" v-bind:class="[skin === 5 ? 'top' : '' ]" ></div>
-          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(' + fakeUrl(4) + '), rgba(' + color + ',0.85)'}" v-bind:class="[skin === 6 ? 'top' : '' ]"></div>
-
+        <div id="output" class="col-12 col-lg-4 output">
+          <div id="output-inner">
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url(./dist/img/1.png)'}" v-bind:class="[skin === 1 ? 'top' : '' ]"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url('+ fakeHand(0)+ ')'}" v-bind:class="[skin === 2 ? 'top' : '' ]"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url('+ fakeHand(1)+ ')'}" v-bind:class="[skin === 3 ? 'top' : '' ]"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url('+ fakeHand(2)+ ')'}" v-bind:class="[skin === 4 ? 'top' : '' ]"></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url('+ fakeHand(3)+ ')'}" v-bind:class="[skin === 5 ? 'top' : '' ]" ></div>
+          <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url('+ fakeHand(4)+ ')'}" v-bind:class="[skin === 6 ? 'top' : '' ]"></div>
+          <div id="bg" v-bind:style="{background:color}"></div>
+        </div>
 
 
 
         </div>
-        <div class="col-12 col-md-4 colors">
-          <fieldset class="preview-colors">
+        <div id="colors" class="col-12 col-lg-4 colors">
+
+
+          <!-- BLUES -->
+          <fieldset class="preview-colors" v-if="family === 'Blues'">
+           <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span>
+
+          </div>
+
+
           <label for="preview-color" class="color-select">Choose colour</label>
-          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: 'rgba(' + color + ',0.85)'}"></span></div>
-          <label for="preview-color-0">
-            <input id="preview-color-0" name="preview-color" type="radio" value="255, 195, 229" v-model="color" checked>
-            <div class="preview-color" style="background-image:url('./dist/img/colors/001.png'); background-repeat:no-repeat;"></div>
-          </label>
           <label for="preview-color-1">
-            <input id="preview-color-1" name="preview-color" type="radio" value="199, 142, 184" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/002.png'); background-repeat:no-repeat;"></div>
+            <input id="preview-color-1" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-081?variant=33482690058';" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/081.png'); background-repeat:no-repeat;"></div>
           </label>
-<label for="preview-color-2"><input id="preview-color-2" name="preview-color" type="radio" value="198, 141, 182" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/002.png); background-repeat:no-repeat;"></div></label>
-<label for="preview-color-3"><input id="preview-color-3" name="preview-color" type="radio" value="206, 140, 166" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/003.png); background-repeat:no-repeat;"></div></label>
-<label for="preview-color-4"><input id="preview-color-4" name="preview-color" type="radio" value="231, 178, 201" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/004.png); background-repeat:no-repeat;"></div></label>
-<label for="preview-color-5"><input id="preview-color-5" name="preview-color" type="radio" value="196, 119, 156" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/005.png); background-repeat:no-repeat;"></div></label>
-<label for="preview-color-8"><input id="preview-color-8" name="preview-color" type="radio" value="252, 115, 163" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/008.png); background-repeat:no-repeat;"></div></label>
-<label for="preview-color-10"><input id="preview-color-10" name="preview-color" type="radio" value="232, 195, 186" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/010.png); background-repeat:no-repeat;"></div></label>
-<label for="preview-color-11"><input id="preview-color-11" name="preview-color" type="radio" value="223, 174, 169" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/011.png); background-repeat:no-repeat;"></div></label>
-<label for="preview-color-12"><input id="preview-color-12" name="preview-color" type="radio" value="208, 137, 163" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/012.png); background-repeat:no-repeat;"></div></label>
-<!--
-<label for="preview-color-13"><input id="preview-color-13" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/013.png); background-repeat:no-repeat;"></div></label><label for="preview-color-14"><input id="preview-color-14" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/014.png); background-repeat:no-repeat;"></div></label><label for="preview-color-15"><input id="preview-color-15" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/015.png); background-repeat:no-repeat;"></div></label><label for="preview-color-16"><input id="preview-color-16" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/016.png); background-repeat:no-repeat;"></div></label><label for="preview-color-17"><input id="preview-color-17" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/017.png); background-repeat:no-repeat;"></div></label><label for="preview-color-18"><input id="preview-color-18" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/018.png); background-repeat:no-repeat;"></div></label><label for="preview-color-19"><input id="preview-color-19" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/019.png); background-repeat:no-repeat;"></div></label><label for="preview-color-20"><input id="preview-color-20" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/020.png); background-repeat:no-repeat;"></div></label><label for="preview-color-21"><input id="preview-color-21" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/021.png); background-repeat:no-repeat;"></div></label><label for="preview-color-22"><input id="preview-color-22" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/022.png); background-repeat:no-repeat;"></div></label><label for="preview-color-23"><input id="preview-color-23" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/023.png); background-repeat:no-repeat;"></div></label><label for="preview-color-24"><input id="preview-color-24" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/024.png); background-repeat:no-repeat;"></div></label><label for="preview-color-25"><input id="preview-color-25" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/025.png); background-repeat:no-repeat;"></div></label><label for="preview-color-26"><input id="preview-color-26" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/026.png); background-repeat:no-repeat;"></div></label><label for="preview-color-27"><input id="preview-color-27" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/027.png); background-repeat:no-repeat;"></div></label><label for="preview-color-28"><input id="preview-color-28" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/028.png); background-repeat:no-repeat;"></div></label><label for="preview-color-29"><input id="preview-color-29" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/029.png); background-repeat:no-repeat;"></div></label><label for="preview-color-30"><input id="preview-color-30" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/030.png); background-repeat:no-repeat;"></div></label><label for="preview-color-31"><input id="preview-color-31" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/031.png); background-repeat:no-repeat;"></div></label><label for="preview-color-32"><input id="preview-color-32" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/032.png); background-repeat:no-repeat;"></div></label><label for="preview-color-33"><input id="preview-color-33" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/033.png); background-repeat:no-repeat;"></div></label><label for="preview-color-34"><input id="preview-color-34" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/034.png); background-repeat:no-repeat;"></div></label><label for="preview-color-35"><input id="preview-color-35" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/035.png); background-repeat:no-repeat;"></div></label><label for="preview-color-36"><input id="preview-color-36" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/036.png); background-repeat:no-repeat;"></div></label><label for="preview-color-37"><input id="preview-color-37" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/037.png); background-repeat:no-repeat;"></div></label><label for="preview-color-38"><input id="preview-color-38" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/038.png); background-repeat:no-repeat;"></div></label><label for="preview-color-39"><input id="preview-color-39" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/039.png); background-repeat:no-repeat;"></div></label><label for="preview-color-40"><input id="preview-color-40" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/040.png); background-repeat:no-repeat;"></div></label><label for="preview-color-41"><input id="preview-color-41" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/041.png); background-repeat:no-repeat;"></div></label><label for="preview-color-42"><input id="preview-color-42" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/042.png); background-repeat:no-repeat;"></div></label><label for="preview-color-43"><input id="preview-color-43" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/043.png); background-repeat:no-repeat;"></div></label><label for="preview-color-44"><input id="preview-color-44" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/044.png); background-repeat:no-repeat;"></div></label><label for="preview-color-45"><input id="preview-color-45" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/045.png); background-repeat:no-repeat;"></div></label><label for="preview-color-46"><input id="preview-color-46" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/046.png); background-repeat:no-repeat;"></div></label><label for="preview-color-47"><input id="preview-color-47" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/047.png); background-repeat:no-repeat;"></div></label><label for="preview-color-48"><input id="preview-color-48" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/048.png); background-repeat:no-repeat;"></div></label><label for="preview-color-49"><input id="preview-color-49" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/049.png); background-repeat:no-repeat;"></div></label><label for="preview-color-50"><input id="preview-color-50" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/050.png); background-repeat:no-repeat;"></div></label><label for="preview-color-51"><input id="preview-color-51" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/051.png); background-repeat:no-repeat;"></div></label><label for="preview-color-52"><input id="preview-color-52" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/052.png); background-repeat:no-repeat;"></div></label><label for="preview-color-53"><input id="preview-color-53" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/053.png); background-repeat:no-repeat;"></div></label><label for="preview-color-54"><input id="preview-color-54" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/054.png); background-repeat:no-repeat;"></div></label><label for="preview-color-55"><input id="preview-color-55" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/055.png); background-repeat:no-repeat;"></div></label><label for="preview-color-56"><input id="preview-color-56" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/056.png); background-repeat:no-repeat;"></div></label><label for="preview-color-57"><input id="preview-color-57" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/057.png); background-repeat:no-repeat;"></div></label><label for="preview-color-58"><input id="preview-color-58" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/058.png); background-repeat:no-repeat;"></div></label><label for="preview-color-59"><input id="preview-color-59" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/059.png); background-repeat:no-repeat;"></div></label><label for="preview-color-60"><input id="preview-color-60" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/060.png); background-repeat:no-repeat;"></div></label><label for="preview-color-61"><input id="preview-color-61" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/061.png); background-repeat:no-repeat;"></div></label><label for="preview-color-62"><input id="preview-color-62" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/062.png); background-repeat:no-repeat;"></div></label><label for="preview-color-63"><input id="preview-color-63" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/063.png); background-repeat:no-repeat;"></div></label><label for="preview-color-64"><input id="preview-color-64" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/064.png); background-repeat:no-repeat;"></div></label><label for="preview-color-65"><input id="preview-color-65" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/065.png); background-repeat:no-repeat;"></div></label><label for="preview-color-66"><input id="preview-color-66" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/066.png); background-repeat:no-repeat;"></div></label><label for="preview-color-67"><input id="preview-color-67" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/067.png); background-repeat:no-repeat;"></div></label><label for="preview-color-68"><input id="preview-color-68" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/068.png); background-repeat:no-repeat;"></div></label><label for="preview-color-69"><input id="preview-color-69" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/069.png); background-repeat:no-repeat;"></div></label><label for="preview-color-70"><input id="preview-color-70" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/070.png); background-repeat:no-repeat;"></div></label><label for="preview-color-71"><input id="preview-color-71" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/071.png); background-repeat:no-repeat;"></div></label><label for="preview-color-72"><input id="preview-color-72" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/072.png); background-repeat:no-repeat;"></div></label><label for="preview-color-73"><input id="preview-color-73" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/073.png); background-repeat:no-repeat;"></div></label><label for="preview-color-74"><input id="preview-color-74" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/074.png); background-repeat:no-repeat;"></div></label><label for="preview-color-75"><input id="preview-color-75" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/075.png); background-repeat:no-repeat;"></div></label><label for="preview-color-76"><input id="preview-color-76" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/076.png); background-repeat:no-repeat;"></div></label><label for="preview-color-77"><input id="preview-color-77" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/077.png); background-repeat:no-repeat;"></div></label><label for="preview-color-78"><input id="preview-color-78" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/078.png); background-repeat:no-repeat;"></div></label><label for="preview-color-79"><input id="preview-color-79" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/079.png); background-repeat:no-repeat;"></div></label><label for="preview-color-80"><input id="preview-color-80" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/080.png); background-repeat:no-repeat;"></div></label><label for="preview-color-81"><input id="preview-color-81" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/081.png); background-repeat:no-repeat;"></div></label><label for="preview-color-82"><input id="preview-color-82" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/082.png); background-repeat:no-repeat;"></div></label><label for="preview-color-83"><input id="preview-color-83" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/083.png); background-repeat:no-repeat;"></div></label><label for="preview-color-84"><input id="preview-color-84" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/084.png); background-repeat:no-repeat;"></div></label><label for="preview-color-85"><input id="preview-color-85" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/085.png); background-repeat:no-repeat;"></div></label><label for="preview-color-86"><input id="preview-color-86" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/086.png); background-repeat:no-repeat;"></div></label><label for="preview-color-87"><input id="preview-color-87" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/087.png); background-repeat:no-repeat;"></div></label><label for="preview-color-88"><input id="preview-color-88" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/088.png); background-repeat:no-repeat;"></div></label><label for="preview-color-89"><input id="preview-color-89" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/089.png); background-repeat:no-repeat;"></div></label><label for="preview-color-90"><input id="preview-color-90" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/090.png); background-repeat:no-repeat;"></div></label><label for="preview-color-91"><input id="preview-color-91" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/091.png); background-repeat:no-repeat;"></div></label><label for="preview-color-92"><input id="preview-color-92" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/092.png); background-repeat:no-repeat;"></div></label><label for="preview-color-93"><input id="preview-color-93" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/093.png); background-repeat:no-repeat;"></div></label><label for="preview-color-94"><input id="preview-color-94" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/094.png); background-repeat:no-repeat;"></div></label><label for="preview-color-95"><input id="preview-color-95" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/095.png); background-repeat:no-repeat;"></div></label><label for="preview-color-96"><input id="preview-color-96" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/096.png); background-repeat:no-repeat;"></div></label><label for="preview-color-97"><input id="preview-color-97" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/097.png); background-repeat:no-repeat;"></div></label><label for="preview-color-98"><input id="preview-color-98" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/098.png); background-repeat:no-repeat;"></div></label><label for="preview-color-99"><input id="preview-color-99" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/099.png); background-repeat:no-repeat;"></div></label><label for="preview-color-100"><input id="preview-color-100" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/100.png); background-repeat:no-repeat;"></div></label><label for="preview-color-101"><input id="preview-color-101" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/101.png); background-repeat:no-repeat;"></div></label><label for="preview-color-102"><input id="preview-color-102" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/102.png); background-repeat:no-repeat;"></div></label><label for="preview-color-103"><input id="preview-color-103" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/103.png); background-repeat:no-repeat;"></div></label><label for="preview-color-104"><input id="preview-color-104" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/104.png); background-repeat:no-repeat;"></div></label><label for="preview-color-105"><input id="preview-color-105" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/105.png); background-repeat:no-repeat;"></div></label><label for="preview-color-106"><input id="preview-color-106" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/106.png); background-repeat:no-repeat;"></div></label><label for="preview-color-107"><input id="preview-color-107" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/107.png); background-repeat:no-repeat;"></div></label><label for="preview-color-108"><input id="preview-color-108" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/108.png); background-repeat:no-repeat;"></div></label><label for="preview-color-109"><input id="preview-color-109" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/109.png); background-repeat:no-repeat;"></div></label><label for="preview-color-110"><input id="preview-color-110" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/110.png); background-repeat:no-repeat;"></div></label><label for="preview-color-111"><input id="preview-color-111" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/111.png); background-repeat:no-repeat;"></div></label><label for="preview-color-112"><input id="preview-color-112" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/112.png); background-repeat:no-repeat;"></div></label><label for="preview-color-113"><input id="preview-color-113" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/113.png); background-repeat:no-repeat;"></div></label><label for="preview-color-114"><input id="preview-color-114" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/114.png); background-repeat:no-repeat;"></div></label><label for="preview-color-115"><input id="preview-color-115" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/115.png); background-repeat:no-repeat;"></div></label><label for="preview-color-116"><input id="preview-color-116" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/116.png); background-repeat:no-repeat;"></div></label><label for="preview-color-117"><input id="preview-color-117" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/117.png); background-repeat:no-repeat;"></div></label><label for="preview-color-118"><input id="preview-color-118" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/118.png); background-repeat:no-repeat;"></div></label><label for="preview-color-119"><input id="preview-color-119" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/119.png); background-repeat:no-repeat;"></div></label><label for="preview-color-120"><input id="preview-color-120" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/120.png); background-repeat:no-repeat;"></div></label><label for="preview-color-121"><input id="preview-color-121" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/121.png); background-repeat:no-repeat;"></div></label><label for="preview-color-122"><input id="preview-color-122" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/122.png); background-repeat:no-repeat;"></div></label><label for="preview-color-123"><input id="preview-color-123" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/123.png); background-repeat:no-repeat;"></div></label><label for="preview-color-124"><input id="preview-color-124" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/124.png); background-repeat:no-repeat;"></div></label><label for="preview-color-125"><input id="preview-color-125" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/125.png); background-repeat:no-repeat;"></div></label><label for="preview-color-126"><input id="preview-color-126" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/126.png); background-repeat:no-repeat;"></div></label><label for="preview-color-127"><input id="preview-color-127" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/127.png); background-repeat:no-repeat;"></div></label><label for="preview-color-128"><input id="preview-color-128" name="preview-color" type="radio" value="" v-model="color"><div class="preview-color" style="background-image:url(./dist/img/colors/128.png); background-repeat:no-repeat;"></div></label>
+          <label for="preview-color-2">
+            <input id="preview-color-2" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-082';" name="preview-color" type="radio" value="rgba(77, 92, 107,0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/082.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-3">
+            <input id="preview-color-3" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-083';" name="preview-color" type="radio" value="rgba(115, 227, 251, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/083.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-4">
+            <input id="preview-color-4" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-084?variant=32422921226';" name="preview-color" type="radio" value="rgba(12, 80, 119, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/084.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-5">
+            <input id="preview-color-5" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-084?variant=32422921226';" name="preview-color" type="radio" value="rgba(40, 28, 118, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/088.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-6">
+            <input id="preview-color-6" v-on:click="previewer.colorLink = '';" name="preview-color" type="radio" value="rgba(20, 78, 166, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/092.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-7">
+            <input id="preview-color-7" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/gel-polish-102';" name="preview-color" type="radio" value="rgba(5, 124, 210, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/102.png'); background-repeat:no-repeat;"></div>
+          </label>
 
--->
+          <label for="preview-color-8">
+            <input id="preview-color-8" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-103';" name="preview-color" type="radio" value="rgba(23, 17, 121, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/103.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-9">
+            <input id="preview-color-9" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-104';" name="preview-color" type="radio" value="rgba(11, 12, 128, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/104.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-10">
+            <input id="preview-color-10" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-111?variant=26764768007';" name="preview-color" type="radio" value="rgba(6, 13, 30, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/111.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-11">
+            <input id="preview-color-11" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-113';" name="preview-color" type="radio" value="rgba(9, 15, 32, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/112.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-12">
+            <input id="preview-color-12" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-117';" name="preview-color" type="radio" value="rgba(6, 15, 34, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/115.png'); background-repeat:no-repeat;"></div>
+          </label>
 
+          <label for="preview-color-13">
+            <input id="preview-color-13" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-124';" name="preview-color" type="radio" value="rgba(16, 166, 207, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/124.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-14">
+            <input id="preview-color-14" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-126';" name="preview-color" type="radio" value="rgba(61, 132, 204, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/126.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-15">
+            <input id="preview-color-15" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/gel-polish-127';" name="preview-color" type="radio" value="rgba(37, 122, 223, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/127.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-16">
+            <input id="preview-color-16" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/gel-polish-128';" name="preview-color" type="radio" value="rgba(87, 71, 180, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/blues/128.png'); background-repeat:no-repeat;"></div>
+          </label>
 
           </fieldset>
+          <!-- END BlUES -->
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Darks'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="url('./dist/img/colors/patterns/darks/006.png')" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/006.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Greens'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(2, 53, 46, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/greens/085.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Nudes'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Orange'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.86)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Pinks'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Purples'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Reds'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Shimmer'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'White'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+
+
+
+
+
+
+
+          <fieldset class="preview-colors" v-if="family === 'Yellow'">
+
+          <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
+            <label for="preview-color" class="color-select">Choose colour</label>
+          <label for="preview-color-1">
+            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          </fieldset>
+
+          <hr style="border-top:2px solid black;"/>
+          <p style="text-align:center">Select colour family</p>
+          <select id="color-selector" v-model="family">
+            <option>Blues</option>
+            <option>Darks</option>
+            <option>Greens</option>
+            <option>Nudes</option>
+            <option>Orange</option>
+            <option>Pinks</option>
+            <option>Purples</option>
+            <option>Reds</option>
+            <option>Shimmer</option>
+            <option>White</option>
+            <option>Yellow</option>
+          </select>
+
+          <hr style="border-top:2px solid black;"/>
 
         </div>
 
