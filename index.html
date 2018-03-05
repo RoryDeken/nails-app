@@ -114,6 +114,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
           <!-- BLUES -->
           <fieldset class="preview-colors" v-if="family === 'Blues'">
+            <p >{{previewer.name}}</p>
            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span>
 
@@ -122,15 +123,15 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
           <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
-            <input id="preview-color-1" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-081?variant=33482690058';" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <input id="preview-color-1" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-081?variant=33482690058';previewer.name='Gel Polish - 081';" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
             <div class="preview-color" style="background-image:url('./dist/img/colors/blues/081.png'); background-repeat:no-repeat;"></div>
           </label>
           <label for="preview-color-2">
-            <input id="preview-color-2" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-082';" name="preview-color" type="radio" value="rgba(77, 92, 107,0.85)" v-model="color">
+            <input id="preview-color-2" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-082';previewer.name='Gel Polish - 082';" name="preview-color" type="radio" value="rgba(77, 92, 107,0.85)" v-model="color">
             <div class="preview-color" style="background-image:url('./dist/img/colors/blues/082.png'); background-repeat:no-repeat;"></div>
           </label>
           <label for="preview-color-3">
-            <input id="preview-color-3" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-083';" name="preview-color" type="radio" value="rgba(115, 227, 251, 0.85)" v-model="color">
+            <input id="preview-color-3" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/candy-coat-083';previewer.name='Gel Polish - 083';" name="preview-color" type="radio" value="rgba(115, 227, 251, 0.85)" v-model="color">
             <div class="preview-color" style="background-image:url('./dist/img/colors/blues/083.png'); background-repeat:no-repeat;"></div>
           </label>
           <label for="preview-color-4">
@@ -194,21 +195,162 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
 
+
+
+
+          <!-- DARKS -->
+
+
           <fieldset class="preview-colors" v-if="family === 'Darks'">
 
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
-            <input id="preview-color-1" name="preview-color" type="radio" value="url('./dist/img/colors/patterns/darks/006.png')" v-model="color">
+            <input id="preview-color-1" name="preview-color" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/gel-polish-038';"  type="radio" value="url('./dist/img/patterns/darks/006.png')" v-model="color">
             <div class="preview-color" style="background-image:url('./dist/img/colors/darks/006.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/038.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/053.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-4">
+            <input id="preview-color-4" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/054.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-5">
+            <input id="preview-color-5" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/055.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-6">
+            <input id="preview-color-6" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/056.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-7">
+            <input id="preview-color-7" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/062.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-8">
+            <input id="preview-color-8" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/063.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-9">
+            <input id="preview-color-9" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/072.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-10">
+            <input id="preview-color-10" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/074.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-11">
+            <input id="preview-color-11" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/076.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-12">
+            <input id="preview-color-12" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/077.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-13">
+            <input id="preview-color-13" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/078.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-14">
+            <input id="preview-color-14" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/079.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-15">
+            <input id="preview-color-15" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/080.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-16">
+            <input id="preview-color-16" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/086.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-17">
+            <input id="preview-color-17" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/087.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-18">
+            <input id="preview-color-18" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/096.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-19">
+            <input id="preview-color-19" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/108.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-20">
+            <input id="preview-color-20" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/109.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-21">
+            <input id="preview-color-21" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/110.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-22">
+            <input id="preview-color-22" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/113.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-23">
+            <input id="preview-color-23" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/114.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-24">
+            <input id="preview-color-24" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/116.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-25">
+            <input id="preview-color-25" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/117.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-26">
+            <input id="preview-color-26" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/118.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-27">
+            <input id="preview-color-27" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/119.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-28">
+            <input id="preview-color-28" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/darks/120.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
 
+          <!-- END Darks -->
 
 
-
-
+          <!-- GREENS -->
 
           <fieldset class="preview-colors" v-if="family === 'Greens'">
 
@@ -218,6 +360,37 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
             <input id="preview-color-1" name="preview-color" type="radio" value="rgba(2, 53, 46, 0.85)" v-model="color">
             <div class="preview-color" style="background-image:url('./dist/img/colors/greens/085.png'); background-repeat:no-repeat;"></div>
           </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/greens/089.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/greens/090.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-4">
+            <input id="preview-color-4" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/greens/091.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-5">
+            <input id="preview-color-5" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/greens/122.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-6">
+            <input id="preview-color-6" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/greens/123.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-7">
+            <input id="preview-color-7" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/greens/125.png'); background-repeat:no-repeat;"></div>
+          </label>
+
 
           </fieldset>
 
@@ -234,8 +407,73 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
-            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+            <input id="preview-color-1" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/010.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/011.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/016.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-4">
+            <input id="preview-color-4" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/017.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-5">
+            <input id="preview-color-5" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/018.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-6">
+            <input id="preview-color-6" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/019.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-7">
+            <input id="preview-color-7" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/020.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-8">
+            <input id="preview-color-8" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/021.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-9">
+            <input id="preview-color-9" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/022.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-10">
+            <input id="preview-color-10" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/023.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-11">
+            <input id="preview-color-11" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/025.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-12">
+            <input id="preview-color-12" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/067.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-13">
+            <input id="preview-color-13" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/073.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-14">
+            <input id="preview-color-14" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/075.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
@@ -254,11 +492,22 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
             <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.86)" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+            <div class="preview-color" style="background-image:url('./dist/img/colors/oranges/049.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/oranges/098.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/oranges/098.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
 
+          <!-- END ORanges -->
 
 
 
@@ -266,48 +515,157 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
 
-
-
+          <!-- Pinks -->
 
           <fieldset class="preview-colors" v-if="family === 'Pinks'">
 
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
-            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+            <input id="preview-color-1" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/001.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/002.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/003.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-4">
+            <input id="preview-color-4" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/004.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-5">
+            <input id="preview-color-5" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/005.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-6">
+            <input id="preview-color-6" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/008.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-7">
+            <input id="preview-color-7" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/012.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-8">
+            <input id="preview-color-8" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/013.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-9">
+            <input id="preview-color-9" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/014.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-10">
+            <input id="preview-color-10" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/015.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-11">
+            <input id="preview-color-11" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/024.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-12">
+            <input id="preview-color-12" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/027.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-13">
+            <input id="preview-color-13" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/028.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-14">
+            <input id="preview-color-14" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/029.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-15">
+            <input id="preview-color-15" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/041.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-16">
+            <input id="preview-color-16" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/042.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-17">
+            <input id="preview-color-17" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/043.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-18">
+            <input id="preview-color-18" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/045.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-19">
+            <input id="preview-color-19" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/101.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
 
+          <!-- End Pinks -->
 
 
 
 
 
 
-
-
+          <!-- Purples -->
 
           <fieldset class="preview-colors" v-if="family === 'Purples'">
 
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
-            <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+            <input id="preview-color-1" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/purples/007.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/purples/057.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/purples/058.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-4">
+            <input id="preview-color-4" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/purples/059.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-5">
+            <input id="preview-color-5" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/purples/061.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
 
 
+          <!-- End Purples -->
 
 
 
 
 
-
-
+          <!-- Reds -->
           <fieldset class="preview-colors" v-if="family === 'Reds'">
 
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
@@ -316,6 +674,113 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
             <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
             <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
           </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/030.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/031.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-4">
+            <input id="preview-color-4" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/032.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-5">
+            <input id="preview-color-5" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/033.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-6">
+            <input id="preview-color-6" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/034.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-7">
+            <input id="preview-color-7" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/035.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-8">
+            <input id="preview-color-8" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/036.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-9">
+            <input id="preview-color-9" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/037.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-10">
+            <input id="preview-color-10" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/039.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-11">
+            <input id="preview-color-11" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/040.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-12">
+            <input id="preview-color-12" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/044.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-13">
+            <input id="preview-color-13" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/046.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-14">
+            <input id="preview-color-14" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/047.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-15">
+            <input id="preview-color-15" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/048.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-16">
+            <input id="preview-color-16" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/050.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-17">
+            <input id="preview-color-17" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/051.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-18">
+            <input id="preview-color-18" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/052.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-19">
+            <input id="preview-color-19" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/060.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-20">
+            <input id="preview-color-20" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/064.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-21">
+            <input id="preview-color-21" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/066.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-22">
+            <input id="preview-color-22" name="preview-color" type="radio" value="" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/100.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+
 
           </fieldset>
 
@@ -331,10 +796,51 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
             <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/065.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/068.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-3">
+            <input id="preview-color-3" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/069.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-4">
+            <input id="preview-color-4" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/070.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-5">
+            <input id="preview-color-5" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/071.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-6">
+            <input id="preview-color-6" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/093.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-7">
+            <input id="preview-color-7" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/095.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-8">
+            <input id="preview-color-8" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/105.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-9">
+            <input id="preview-color-9" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/shimmer/106.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
+          <!-- End Shimmer -->
 
 
 
@@ -343,19 +849,23 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
 
-
-
+          <!-- Whites -->
           <fieldset class="preview-colors" v-if="family === 'White'">
 
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
             <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+            <div class="preview-color" style="background-image:url('./dist/img/colors/white/009.png'); background-repeat:no-repeat;"></div>
+          </label>
+          <label for="preview-color-2">
+            <input id="preview-color-2" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/white/107.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
 
+          <!-- Whites -->
 
 
 
@@ -363,13 +873,21 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
 
+
+
+          <!-- yellow -->
           <fieldset class="preview-colors" v-if="family === 'Yellow'">
 
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
             <input id="preview-color-1" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
-            <div class="preview-color" style="background-image:url('./dist/img/colors/reds/026.png'); background-repeat:no-repeat;"></div>
+            <div class="preview-color" style="background-image:url('./dist/img/colors/yellow/097.png'); background-repeat:no-repeat;"></div>
+          </label>
+
+          <label for="preview-color-">
+            <input id="preview-color-" name="preview-color" type="radio" value="rgba(79, 102, 165, 0.85)" v-model="color">
+            <div class="preview-color" style="background-image:url('./dist/img/colors/yellow/121.png'); background-repeat:no-repeat;"></div>
           </label>
 
           </fieldset>
