@@ -2,7 +2,7 @@
 var previewer = new Vue({
   el: "#previewer",
   data: {
-      name:'Gel Polish - 81',
+      name: 'Gel Polish - 81',
       colorLink: 'https://www.lovecandycoat.com/products/candy-coat-081?variant=33482690058',
       family: 'Blues',
         fakeHands: [
@@ -91,7 +91,6 @@ var previewer = new Vue({
   },
   created: function(){
     var url = window.location.href;
-    console.log('Vue instance created, href is ' + url);
   },
   mounted: function(){
     setTimeout(function(){
