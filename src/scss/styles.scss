@@ -184,7 +184,7 @@ input[type=range]:focus::-ms-fill-upper {
   }
   #output-inner {
     width: 300px;
-    height: 455px;
+    height: 400px;
     margin:auto;
     display:block;
     position: relative;
@@ -233,8 +233,12 @@ input[type=range]:focus::-ms-fill-upper {
       border:2px solid black;
       border-radius: 0;
       color: black;
+      margin: auto;
+      display: block;
       margin-top: 25px;
       margin-bottom: 25px;
+      text-align: center;
+
     }
     .color-link:hover, .color-link:focus {
       background:rgba(254,179,207,0.3);

@@ -2,7 +2,7 @@
 var previewer = new Vue({
   el: "#previewer",
   data: {
-      name: 'Gel Polish - 81',
+      name: '',
       colorLink: 'https://www.lovecandycoat.com/products/candy-coat-081?variant=33482690058',
       family: 'Blues',
         fakeHands: [
@@ -89,28 +89,25 @@ var previewer = new Vue({
       return this.fakeControls[index];
     }
   },
-  created: function(){
-    var url = window.location.href;
-  },
   mounted: function(){
     setTimeout(function(){
       previewer.loading = false;
-    }, 4000);
+    }, 5000);
     setTimeout(function(){
       console.log('replacing hands');
       for(i=0; i < previewer.fakeHands.length; i++){
         previewer.fakeHands[i] = previewer.realHands[i];
       }
-    }, 0);
+    }, 500);
     setTimeout(function(){
-      console.log('replacingcontrols');
+      console.log('replacing controls');
       for(i=0; i < previewer.fakeControls.length; i++){
         Vue.set(previewer.fakeControls, i, previewer.realControls[i]);
       }
 
     }, 3000);
     setTimeout(function(){
-      console.log('replacingcontrols');
+      console.log('replacing colors');
       for(i=0; i < previewer.fakeColors.length; i++){
         Vue.set(previewer.fakeColors, i, previewer.realColors[i]);
       }
