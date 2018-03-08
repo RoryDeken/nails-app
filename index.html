@@ -104,6 +104,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url('+ fakeHand(3)+ ')'}" v-bind:class="[skin === 5 ? 'top' : '' ]" ></div>
           <div id="hand"  v-bind:style="{background: nailLength + 'px ' + shape + 'px url('+ fakeHand(4)+ ')'}" v-bind:class="[skin === 6 ? 'top' : '' ]"></div>
           <div id="bg" v-bind:style="{background:color}"></div>
+          <div id="default"></div>
         </div>
 
 
@@ -592,7 +593,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           </label>
 
           <label for="preview-color-15">
-            <input id="preview-color-15" name="preview-color" type="radio" value="rgba(225, 130, 157, 0.85)" v-model="color" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/gel-polish-041';previewer.name='Gel Polish - 41';">
+            <input id="preview-color-15" name="preview-color" type="radio" value="rgba(254, 75, 171, 0.85)" v-model="color" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/gel-polish-041';previewer.name='Gel Polish - 41';">
             <div class="preview-color" style="background-image:url('./dist/img/colors/pinks/041.png'); background-repeat:no-repeat;"></div>
           </label>
 
@@ -909,7 +910,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
             <option>Pinks</option>
             <option>Purples</option>
             <option>Reds</option>
-            <option>Shimmer</option>
+            <!--<option>Shimmer</option>-->
             <option>White</option>
             <option>Yellow</option>
           </select>

@@ -206,7 +206,13 @@ input[type=range]:focus::-ms-fill-upper {
   }
   #bg {
     z-index: 0;
-    background-repeat: repeat!important;
+    background-size: auto!important;
+  }
+
+  #default {
+    background-color:#EBCEC0;
+    height:100%;
+    width:100%;
   }
 }
 
