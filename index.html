@@ -203,7 +203,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
           <fieldset class="preview-colors" v-if="family === 'Darks'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -354,7 +354,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           <!-- GREENS -->
 
           <fieldset class="preview-colors" v-if="family === 'Greens'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -363,7 +363,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           </label>
 
           <label for="preview-color-2">
-            <input id="preview-color-2" name="preview-color" type="radio" value="rgba(180, 225, 23, 0.85)" v-model="color" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/';previewer.name='Gel Polish - 89';">
+            <input id="preview-color-2" name="preview-color" type="radio" value="rgba(180, 225, 23, 0.85)" v-model="color" v-on:click="previewer.colorLink = '';previewer.name='Gel Polish - 89';">
             <div class="preview-color" style="background-image:url('./dist/img/colors/greens/089.png'); background-repeat:no-repeat;"></div>
           </label>
 
@@ -404,7 +404,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
           <fieldset class="preview-colors" v-if="family === 'Nudes'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -458,7 +458,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           </label>
 
           <label for="preview-color-11">
-            <input id="preview-color-11" name="preview-color" type="radio" value="url('./dist/img/patterns/nudes/025.png')" v-model="color" v-on:click="previewer.colorLink = 'https://www.lovecandycoat.com/products/';previewer.name='Gel Polish - 25';">
+            <input id="preview-color-11" name="preview-color" type="radio" value="url('./dist/img/patterns/nudes/025.png')" v-model="color" v-on:click="previewer.colorLink = '';previewer.name='Gel Polish - 25';">
             <div class="preview-color" style="background-image:url('./dist/img/colors/nudes/025.png'); background-repeat:no-repeat;"></div>
           </label>
 
@@ -488,7 +488,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
           <fieldset class="preview-colors" v-if="family === 'Oranges'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -519,7 +519,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           <!-- Pinks -->
 
           <fieldset class="preview-colors" v-if="family === 'Pinks'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -629,7 +629,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
           <!-- Purples -->
 
           <fieldset class="preview-colors" v-if="family === 'Purples'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -792,7 +792,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
 
           <fieldset class="preview-colors" v-if="family === 'Shimmer'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -858,7 +858,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
           <!-- Whites -->
           <fieldset class="preview-colors" v-if="family === 'White'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
@@ -884,7 +884,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
           <!-- yellow -->
           <fieldset class="preview-colors" v-if="family === 'Yellow'">
-
+            <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">

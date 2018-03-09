@@ -196,7 +196,11 @@ input[type=range]:focus::-ms-fill-upper {
   position:absolute;
   z-index:-10;
   background: none;
+  opacity: 0;
   }
+    #hand.top {
+      opacity: 1;
+    }
   #hand.top , #bg {
     z-index: 1;
     position: absolute;
@@ -205,14 +209,12 @@ input[type=range]:focus::-ms-fill-upper {
     height:100%;
     top:0;
     left:0;
-
-
-
   }
   #bg {
     z-index: 0;
     background-size: auto!important;
   }
+
   #bg,#default, #hand {
     -webkit-transform: scale(1.15);
       -ms-transform: scale(1.15);
@@ -223,6 +225,17 @@ input[type=range]:focus::-ms-fill-upper {
     background-color:#EBCEC0;
     height:100%;
     width:100%;
+    z-index: -1;
+    position: absolute;
+
+  }
+
+  #bg, #default {
+    @media(max-width: 480px){
+        height: 80%;
+        width: 99%;
+        top: 25px;
+    }
   }
 }
 
