@@ -176,7 +176,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 /* hand styles */
 #output {
-
+  overflow: hidden;
   .output {
     img{
       max-width: 100%;
@@ -188,6 +188,8 @@ input[type=range]:focus::-ms-fill-upper {
     margin:auto;
     display:block;
     position: relative;
+
+
   #hand{
     height: 0px;
     width: 0px;
@@ -203,10 +205,18 @@ input[type=range]:focus::-ms-fill-upper {
     height:100%;
     top:0;
     left:0;
+
+
+
   }
   #bg {
     z-index: 0;
     background-size: auto!important;
+  }
+  #bg,#default, #hand {
+    -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
   }
 
   #default {
