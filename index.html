@@ -668,7 +668,7 @@ font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 
           <!-- Reds -->
           <fieldset class="preview-colors" v-if="family === 'Reds'">
-
+          <a class="color-link" v-if="colorLink !==''" v-bind:href="colorLink" target="_blank">Purchase this colour</a>
           <div id="preview-color"  class="d-none d-lg-block" ><span v-bind:style="{background: color}"></span></div>
             <label for="preview-color" class="color-select">Choose colour</label>
           <label for="preview-color-1">
